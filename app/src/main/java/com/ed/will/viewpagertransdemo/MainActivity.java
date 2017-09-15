@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.ed.will.viewpagertransdemo.fragmentpageradapter.FragemtActivity;
 import com.ed.will.viewpagertransdemo.pageradapter.OneMoreActivity;
 
 import butterknife.BindView;
@@ -14,6 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @BindView(R.id.pageradapter_btn)
     Button pageradapterBtn;
@@ -36,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.fmpadapter_btn:
-                Toast.makeText(this,"fragment",Toast.LENGTH_LONG).show();
+                Intent intent2 = new Intent(MainActivity.this, FragemtActivity.class);
+                startActivity(intent2);
+                //Toast.makeText(this,"fragment",Toast.LENGTH_LONG).show();
                 break;
         }
     }
