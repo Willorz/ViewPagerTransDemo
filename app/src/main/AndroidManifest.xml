@@ -19,6 +19,7 @@
 
         <activity android:name=".pageradapter.OneMoreActivity"/>
         <activity android:name=".fragmentpageradapter.FragemtActivity"/>
+        <activity android:name=".fragmentstatepageradapter.FragmentStateActivity"/>
 
 
     </application>

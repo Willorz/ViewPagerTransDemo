@@ -20,4 +20,11 @@
         android:layout_height="wrap_content"
         android:text="FragmentPagerAdapter"/>
 
+    <Button
+        android:id="@+id/fmpstateadapter_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FragmentStatePagerAdapter"/>
+
+
 </LinearLayout>
