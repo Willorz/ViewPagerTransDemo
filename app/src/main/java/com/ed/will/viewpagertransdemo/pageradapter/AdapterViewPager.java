@@ -1,4 +1,4 @@
-package com.ed.will.viewpagertransdemo;
+package com.ed.will.viewpagertransdemo.pageradapter;
 
 import android.support.v4.view.PagerAdapter;
 import android.util.Log;
@@ -11,12 +11,12 @@ import java.util.List;
  * Created by will on 17-9-14.
  */
 
-public class MyViewPagerAdapter extends PagerAdapter {
+public class AdapterViewPager extends PagerAdapter {
 
     private List<View> mListViews;
 
 
-    public MyViewPagerAdapter(List<View> mListViews){
+    public AdapterViewPager(List<View> mListViews){
         this.mListViews=mListViews;
     }
 
