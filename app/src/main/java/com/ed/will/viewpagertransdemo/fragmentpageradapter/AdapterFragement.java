@@ -20,17 +20,17 @@ public class AdapterFragement extends FragmentPagerAdapter {
 
     public AdapterFragement(FragmentManager fm,List<Fragment> mFragments) {
         super(fm);
-        this.mFragments=mFragments;
+        this.mFragments=mFragments;//写构造方法，方便赋值调用
     }
 
     @Override
     public Fragment getItem(int position) {
-        return mFragments.get(position);
+        return mFragments.get(position);//根据Item的位置返回对应位置的Fragment，绑定item和Fragment
     }
 
     @Override
     public int getCount() {
-        return mFragments.size();
+        return mFragments.size();//设置Item的数量
     }
 
     @Override

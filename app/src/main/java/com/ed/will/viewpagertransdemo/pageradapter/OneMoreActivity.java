@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 
 /**
  * Created by will on 17-9-14.
+ * 当ViewPager的内部选项卡为View时
  */
 
 public class OneMoreActivity extends AppCompatActivity {
@@ -46,9 +47,17 @@ public class OneMoreActivity extends AppCompatActivity {
 
         mViewPager.setAdapter(new AdapterViewPager(viewList));
         mViewPager.setCurrentItem(0);
-        mViewPager.setPageMargin(40);
-        mViewPager.setOffscreenPageLimit(2);
-        mViewPager.setPageTransformer(true,new DepthPageTransformer());
+        mViewPager.setPageMargin(40);//设置页卡间距
+        mViewPager.setOffscreenPageLimit(2);//默认为1
+        //这个方法是用来控制fragment不重新走生命周期的个数的，
+        // 打个比方一共4个fragment页面，如果mViewPager.setOffscreenPageLimit(3)，那么所有的fragment都只走一次生命周期，
+        // 如果是mViewPager.setOffscreenPageLimit(2)，那么其中有一个fragment会在切换的时候重新走一遍生命周期，
+        // FragmentStatePagerAdapter和FragmentPagerAdapter都是这样，
+        // 但是FragmentPagerAdapter设置setOffscreenPageLimit不影响fragment缓存的个数,
+        // 而FragmentStatePagerAdapter缓存的fragment实例个数就是setOffscreenPageLimit设置的值+1。
+        // 另外setOffscreenPageLimit的缺省值是1，设置0是无效的会被强制赋值成1。
+
+        mViewPager.setPageTransformer(true,new DepthPageTransformer()); //添加切换页卡的动画
         //mViewPager.setOnPageChangeListener(new My);
     }
 }
